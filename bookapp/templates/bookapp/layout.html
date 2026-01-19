@@ -5,6 +5,7 @@
     </head>
     <header>
     {% if not user.is_authenticated %}
+    <a href="{% url 'register' %}">Register</a>
     <a href="{% url 'login' %}">Log in</a>
     {% else %}
     <p>Hello, {{ user.username }}</p>
