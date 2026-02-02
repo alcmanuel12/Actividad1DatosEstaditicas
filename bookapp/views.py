@@ -8,7 +8,8 @@ from bookapp.forms import BookForm
 from bookapp.models import Book
 
 # Create your views here.
-class BookCreate(LoginRequiredMixin, CreateView):
+class BookCreate(PermissionRequiredMixin, CreateView):
+    permission_required='bookapp.add_book'
     model = Book
     form_class = BookForm
     template_name = 'bookapp/form.html'
