@@ -2,10 +2,9 @@ from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.forms import ValidationError
 
-# Create your models here.
 class Author(models.Model):
-    name = models.CharField()
-    last_name = models.CharField()
+    name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
 
 class Book(models.Model):
     STATUS_CHOICES = [
